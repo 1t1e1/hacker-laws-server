@@ -1,13 +1,15 @@
+const stream = require('stream')
+const fs = require('fs')
 const got = require('got')
+const { promisify } = require('util')
+
+const pipeline = promisify(stream.pipeline)
+
 ;(async () => {
-    try {
-        const response = await got(
+    await pipeline(
+        got.stream(
             'https://raw.githubusercontent.com/dwmkerr/hacker-laws/master/README.md',
-        )
-        console.log(response.body)
-        console.log(typeof response.body)
-        console.log(response.body.length)
-    } catch (error) {
-        console.log(error.response.body)
-    }
+        ),
+        fs.createWriteStream('assets/hacker-laws.md'),
+    )
 })()
