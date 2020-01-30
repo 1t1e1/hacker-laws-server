@@ -13,3 +13,5 @@
     -   '/law/:num' gives '#num law-name & law-desc'
 
 ## struggle
+
+-   Write simple express server.

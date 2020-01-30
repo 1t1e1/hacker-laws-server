@@ -17,4 +17,4 @@ arrayOfLawsName.forEach(element => {
     data.push(obj)
 })
 
-console.log(data)
+export default data
