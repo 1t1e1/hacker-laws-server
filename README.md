@@ -1,15 +1,11 @@
-# My plan
+# What does it do?
 
--   write script for download from hacker laws [source](https://raw.githubusercontent.com/dwmkerr/hacker-laws/master/README.md)
+-   `npm run download` command download [hacker laws readme page](https://raw.githubusercontent.com/dwmkerr/hacker-laws/master/README.md) and save in _assets/_.
 
-    -   adding require('path') may be good.
+-   _src/data.js_ read downloaded file return law object.
 
--   read data from file
+Server
 
-    -   import express server
-
--   write REST api with express.
-    -   '/laws' gives '#num law-name'
-    -   '/law/:num' gives '#num law-name & law-desc'
-
-## struggle
+-   `curl http://localhost:3000/` returns all options.
+-   `curl http://localhost:3000/laws` returns list of laws.
+-   `curl http://localhost:3000/law/:id` returns info about law number `:id`.
